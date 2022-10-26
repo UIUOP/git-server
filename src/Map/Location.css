@@ -32,5 +32,16 @@ dl {
 }
 
 
+dd {
+    content: "";
+    display: block;
+    border-bottom: 2px dashed gray;
+    padding-bottom: 10px;
+    border-width: 20%;
+    width: 40%;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
 
 ;

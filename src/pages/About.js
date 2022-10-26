@@ -23,6 +23,7 @@ const About = () => {
                     <Link to="/"><button className="btn intro">소개</button></Link>
 
                     <a href="http://dreampicnicescape.com/" className="btn site" target="_blank">사이트 방문하기</a>
+                    <Link to="/Review"><button className="btn page2">후기페이지</button></Link>
                 </div>
 
                 <ul>

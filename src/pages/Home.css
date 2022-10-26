@@ -32,3 +32,9 @@
     border: none;
     border-bottom: 5px solid #80aeda;
 }
+
+.btn.page2 {
+    background-color: #FFD990;
+    border: none;
+    border-bottom: 5px solid #ecc885;
+}
