@@ -9,11 +9,19 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.3",
+    "body-parser": "^1.20.1",
+    "buffer": "^6.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "html-react-parser": "^3.0.4",
+    "mysql": "^2.18.1",
+    "node": "^19.0.0",
     "node-html-parser": "^6.1.1",
+    "nodemon": "^2.0.20",
     "react": "^18.2.0",
     "react-daum-postcode": "^3.1.1",
     "react-dom": "^18.2.0",
+    "react-html-parser": "^2.0.2",
     "react-kakao-maps-sdk": "^1.1.4",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
@@ -42,5 +50,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/UIUOP/git-server.git",
+  "author": "UIUIOP <dlwjddns2008@nate.com>",
+  "license": "MIT"
 }

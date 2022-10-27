@@ -3,6 +3,7 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Axios from 'axios';
 import '../Review/review.css';
+import ReactHtmlParser from 'react-html-parser';
 
 function App2() {
     const [reviewContent, setreviewContent] = useState({
@@ -12,20 +13,20 @@ function App2() {
 
     const [viewContent, setViewContent] = useState([]);
 
-    useEffect(() => {
-        Axios.get('http://localhost:8000/api/get').then((response) => {
-            setViewContent(response.data);
-        })
-    }, [viewContent])
+    // useEffect(() => {
+    //     Axios.get('http://localhost:1521/api/get').then((response) => {
+    //         setViewContent(response.data);
+    //     })
+    // }, [viewContent])
 
-    const submitReview = () => {
-        Axios.post('http://localhost:8000/api/insert', {
-            title: reviewContent.title,
-            content: reviewContent.content
-        }).then(() => {
-            alert('등록 완료!');
-        })
-    };
+    // const submitReview = () => {
+    //     Axios.post('http://localhost:1521/api/insert', {
+    //         title: reviewContent.title,
+    //         content: reviewContent.content
+    //     }).then(() => {
+    //         alert('등록 완료!');
+    //     })
+    // };
 
     const getValue = e => {
         const { name, value } = e.target;
@@ -44,7 +45,7 @@ function App2() {
                     <div style={{ border: '1px solid #333' }}>
                         <h2>{element.title}</h2>
                         <div>
-                            {(element.content)}
+                            {ReactHtmlParser(element.content)}
                         </div>
                     </div>
                 )}
@@ -57,10 +58,11 @@ function App2() {
                     name='title'
                 />
                 <CKEditor
+
                     editor={ClassicEditor}
-                    data="<p>Hello from CKEditor 5!</p>"
+                    data="<p>후기를 입력하세요</p>"
                     onReady={editor => {
-                        // You can store the "editor" and use when it is needed.
+
                         console.log('Editor is ready to use!', editor);
                     }}
                     onChange={(event, editor) => {
@@ -81,7 +83,9 @@ function App2() {
             </div>
             <button
                 className="submit-button"
-                onClick={submitReview}
+                onClick={() => {
+                    setViewContent(viewContent.concat({ ...reviewContent }));
+                }}
             >입력</button>
         </div>
     );
