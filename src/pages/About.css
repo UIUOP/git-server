@@ -102,3 +102,16 @@ ul {
 .pastelred-text {
     color: #F99090;
 }
+
+
+@media (min-width: 1500px) {
+
+    .aboutcol2 {
+        width: 40%;
+        height: 40%;
+        text-align: center;
+        justify-content: center;
+        margin: auto;
+        display: block;
+    }
+}

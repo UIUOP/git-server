@@ -14,7 +14,9 @@ const About = () => {
                 <div className="text-center">
                     <h1>세부정보</h1>
                     <h4 className="intrduce">시민상가 철거반</h4>
-                    <img className="imgescape" alt="logo2" src="image/1.jpg" style={{ height: '30%', width: '30%' }} />
+                    <div className="aboutcol2">
+                        <img className="imgescapeabout" alt="logo2" src="image/1.jpg" style={{ height: '40%', width: '40%' }} />
+                    </div>
                     <p>시민상가에서 철거 반대 농성을 하고 있는 상점 주인들.
                         <br />우리는 시민상가 철거반의 신입 직원으로
                         <br />그들이 농성을 지속할 수 없게 하기 위해 몰래 건물 지하로 들어간다.</p>
