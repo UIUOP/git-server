@@ -11,8 +11,8 @@ const Location = () => {
             center: new kakao.maps.LatLng(37.31769736304275, 126.83974503891676),
             level: 3
         };
-        var content2 = '<div class ="label"><span class="left"></span><span class="center">카카오!</span><span class="right"></span></div>';
-        var map = new kakao.maps.Map(container, options);
+
+        var map = new kakao.maps.Map(container, options,);
         var markerPosition = new kakao.maps.LatLng(37.31769736304275, 126.83974503891676);
         var marker = new kakao.maps.Marker({
             title: '꿈소풍',
@@ -23,6 +23,18 @@ const Location = () => {
         );
 
         marker.setMap(map);
+
+        var iwContent = '<div style="padding:5px;">경기/인천[안산] 꿈소풍 안산 2호점 <br><a href="http://kko.to/wDk9zFScWu" style="color:blue" target="_blank"> 큰지도보기</a> <a href="http://kko.to/wDk9zFScWu" style="color:blue" target="_blank"> 길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            iwPosition = new kakao.maps.LatLng(37.31769736304275, 126.83974503891676); //인포윈도우 표시 위치입니다
+
+        // 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            position: iwPosition,
+            content: iwContent
+        });
+
+        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+        infowindow.open(map, marker);
 
     }, [])
 

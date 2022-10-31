@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const { urlencoded } = require('body-parser');
 const PORT = process.env.port || 1521;
 
-const db = mysql.createPool({
+const db = mysql.createConnection({
     host: "localhost",
     user: "SCOTT",
     password: "TIGER",

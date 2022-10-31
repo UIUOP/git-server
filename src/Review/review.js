@@ -13,20 +13,20 @@ function App2() {
 
     const [viewContent, setViewContent] = useState([]);
 
-    // useEffect(() => {
-    //     Axios.get('http://localhost:1521/api/get').then((response) => {
-    //         setViewContent(response.data);
-    //     })
-    // }, [viewContent])
+    useEffect(() => {
+        Axios.get('http://localhost:1521/api/get').then((response) => {
+            setViewContent(response.data);
+        })
+    }, [viewContent])
 
-    // const submitReview = () => {
-    //     Axios.post('http://localhost:1521/api/insert', {
-    //         title: reviewContent.title,
-    //         content: reviewContent.content
-    //     }).then(() => {
-    //         alert('등록 완료!');
-    //     })
-    // };
+    const submitReview = () => {
+        Axios.post('http://localhost:1521/api/insert', {
+            title: reviewContent.title,
+            content: reviewContent.content
+        }).then(() => {
+            alert('등록 완료!');
+        })
+    };
 
     const getValue = e => {
         const { name, value } = e.target;
