@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from 'react';
 import './About.css';
-import Location from "../Map/Location";
 import Location3 from "../Map/Location3";
 
 

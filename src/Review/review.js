@@ -3,7 +3,9 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Axios from 'axios';
 import '../Review/review.css';
-import ReactHtmlParser from 'react-html-parser';
+import ReactHtmlParser from 'html-react-parser';
+
+
 
 function App2() {
     const [reviewContent, setreviewContent] = useState({
@@ -13,20 +15,7 @@ function App2() {
 
     const [viewContent, setViewContent] = useState([]);
 
-    useEffect(() => {
-        Axios.get('http://localhost:1521/api/get').then((response) => {
-            setViewContent(response.data);
-        })
-    }, [viewContent])
 
-    const submitReview = () => {
-        Axios.post('http://localhost:1521/api/insert', {
-            title: reviewContent.title,
-            content: reviewContent.content
-        }).then(() => {
-            alert('등록 완료!');
-        })
-    };
 
     const getValue = e => {
         const { name, value } = e.target;
@@ -35,7 +24,19 @@ function App2() {
             [name]: value
         })
     };
-
+    // const onSubmit = async () => {
+    //     try {
+    //         // 서버에 대한 요청을 비동기로 처리 함
+    //         const res = await khApi.App2(element.title, element.content);
+    //         setResData(res.data);
+    //         console.log("작성완료 버튼 클릭");
+    //         if (res.data.result === "OK") {
+    //             window.location.replace("/");
+    //         }
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // };
 
     return (
         <div className="App2">

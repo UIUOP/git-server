@@ -23,6 +23,7 @@ const Home = () => {
                 </div>
                 <Link to="/about"><button className="btn page">상세페이지</button></Link>
                 <Link to="/Review"><button className="btn page2">후기페이지</button></Link>
+                <Link to="/introduce"><button className="btn page2">임시페이지</button></Link>
             </div>
 
             <div className="flex_item">

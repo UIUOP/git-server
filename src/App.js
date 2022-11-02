@@ -10,7 +10,7 @@ import About5 from './pages/About5';
 import About6 from './pages/About6';
 import About7 from './pages/About7';
 import About8 from './pages/About8';
-
+import Intro from './pages/Introduce';
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
         <Route path="/about6" element={<About6 />} />
         <Route path="/about7" element={<About7 />} />
         <Route path="/about8" element={<About8 />} />
+        <Route path="/introduce" element={<Intro />} />
         <Route path="/Review" element={<App2 />} />
       </Routes>
     </Router>
